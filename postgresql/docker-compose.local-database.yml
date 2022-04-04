@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  db:
+      image: postgres
+      volumes:
+        - ./.psql:/var/lib/postgresql/data/
+        - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      restart: always
+      environment:
+        POSTGRES_DB: ecom_db
+        POSTGRES_USER: ecom_admin
+        POSTGRES_PASSWORD: app@ecom2020
+      ports:
+        - 5432:5432

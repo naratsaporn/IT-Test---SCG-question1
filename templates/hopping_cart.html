@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Shopping Cart UI</title>
+	
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+<body>
+	
+	
+   <div class="CartContainer">
+	<form action="/checkout/" method="post">{% csrf_token %}
+   	   <div class="Header">
+   	   	<h3 class="Heading">Shopping Cart</h3>
+   	   	<h5 class="Action">Remove all</h5>
+   	   </div>
+
+   	   <div class="Cart-Items">
+   	   	  <div class="image-box">
+   	   	  	<img src="{% static 'images/apple.png'%}" height="120px" />
+   	   	  </div>
+   	   	  <div class="about">
+   	   	  	<h1 class="title">Apple Juice</h1>
+					<input type="hidden" name="product_name[]" value="Apple Juice">  
+   	   	  	<h3 class="subtitle">250ml</h3>
+   	   	  	<img src="{% static 'images/veg.png'%}" height="30px" />
+   	   	  </div>
+   	   	  <div class="counter">
+   	   	  	<div class="btn">+</div>
+   	   	  	<div class="count">1</div>
+   	   	  	<div class="btn">-</div>
+   	   	  </div>
+   	   	  <div class="prices">
+   	   	  	<div class="amount">$2.99</div>
+			<input type="hidden" name="amount[]" value="2.99"> 
+   	   	  	<div class="save"><u>Save for later</u></div>
+   	   	  	<div class="remove"><u>Remove</u></div>
+   	   	  </div>
+   	   </div>
+
+   	   <div class="Cart-Items pad">
+   	   	  <div class="image-box">
+   	   	  	<img src="{% static 'images/grapes.png'%}" height="120px" />
+   	   	  </div>
+   	   	  <div class="about">
+   	   	  	<h1 class="title">Grapes Juice</h1>
+			<input type="hidden" name="product_name[]" value="Grapes Juice"> 
+   	   	  	<h3 class="subtitle">250ml</h3>
+   	   	  	<img src="{% static 'images/veg.png'%}" height="30px"/>
+   	   	  </div>
+   	   	  <div class="counter">
+   	   	  	<div class="btn">+</div>
+   	   	  	<div class="count">1</div>
+   	   	  	<div class="btn">-</div>
+   	   	  </div>
+   	   	  <div class="prices">
+				<div class="amount">$2.29</div>
+				<input type="hidden" name="amount[]" value="2.29"> 
+				<div class="save"><u>Save for later</u></div>
+				<div class="remove"><u>Remove</u></div>
+				</div>
+			</div>
+		
+		  <div class="Cart-Items pad">
+			<div class="image-box">
+				<img src="{% static 'images/banana_juice.jpg'%}" height="120px" />
+			</div>
+		<div class="about">
+			<h1 class="title">Banana Juice</h1>
+			<input type="hidden" name="product_name[]" value="Banana Juice"> 
+			<h3 class="subtitle">250ml</h3>
+			<img src="{% static 'images/veg.png'%}" height="30px"/>
+		</div>
+		<div class="counter">
+			<div class="btn">+</div>
+			<div class="count">1</div>
+			<div class="btn">-</div>
+		</div>
+		<div class="prices">
+			<div class="amount">$3.12</div>
+				<input type="hidden" name="amount[]" value="3.12"> 
+				<div class="save"><u>Save for later</u></div>
+				<div class="remove"><u>Remove</u></div>
+			</div>
+	  	</div>
+
+	  <div class="Cart-Items pad">
+			<div class="image-box">
+				<img src="{% static 'images/Mango-concentrate.jpg'%}" height="120px" />
+			</div>
+			<div class="about">
+				<h1 class="title">Mango Juice</h1>
+		<input type="hidden" name="product_name[]" value="Mango Juice"> 
+				<h3 class="subtitle">250ml</h3>
+				<img src="{% static 'images/veg.png'%}" height="30px"/>
+			</div>
+			<div class="counter">
+				<div class="btn">+</div>
+				<div class="count">1</div>
+				<div class="btn">-</div>
+			</div>
+			<div class="prices">
+				<div class="amount">$3.32</div>
+		<input type="hidden" name="amount[]" value="3.32"> 
+				<div class="save"><u>Save for later</u></div>
+				<div class="remove"><u>Remove</u></div>
+			</div>
+	</div>  
+   <div class="Cart-Items pad">
+		<div class="image-box">
+			<img src="{% static 'images/orange-juice.jpeg'%}" height="120px" />
+		</div>
+		<div class="about">
+			<h1 class="title">Orange Juice</h1>
+	<input type="hidden" name="product_name[]" value="Orange Juice"> 
+			<h3 class="subtitle">250ml</h3>
+			<img src="{% static 'images/veg.png'%}" height="30px"/>
+		</div>
+		<div class="counter">
+			<div class="btn">+</div>
+			<div class="count">1</div>
+			<div class="btn">-</div>
+		</div>
+		<div class="prices">
+			<div class="amount">$2.19</div>
+	<input type="hidden" name="amount[]" value="2.19"> 
+			<div class="save"><u>Save for later</u></div>
+			<div class="remove"><u>Remove</u></div>
+		</div>
+	</div> 
+   	 <hr> 
+   	 <div class="checkout">
+   	 <div class="total">
+   	 	<div>
+   	 		<div class="Subtotal">Sub-Total</div>
+   	 		<div class="items">5 items</div>
+   	 	</div>
+   	 	<div class="total-amount">$13.91</div>
+			
+		<input type="hidden" name="total_amount" value="6.12"> 
+   	 </div>
+		
+			
+			<button class="button">Checkout</button>
+	</div>
+</form>
+   </div>
+
+</body>
+</html>
