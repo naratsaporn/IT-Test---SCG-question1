@@ -15,3 +15,7 @@ Strat Project
 8. python manage.py runserver
 
 NOTE :
+หน้าขายสินค้า
+http://127.0.0.1:8000/
+หน้าแสดงยอดการขาย
+http://127.0.0.1:8000/dashboard/
